@@ -1,0 +1,200 @@
+.countdownContainer {
+  display: none;
+  position: relative;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50%;
+  background-color: $themePurple;
+  box-shadow: 0 0 0.8rem $themeBlack;
+
+
+  &__inner,
+  &__outer,
+  &__spinning-ball {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  &__inner {
+    width: calc(100% - 0.8rem);
+    height: calc(100% - 0.8rem);
+    top: 0.4rem;
+    left: 0.4rem;
+    z-index: 2;
+    background-color: $darkBlueGrey;
+  }
+
+  &__outer {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: conic-gradient($themeWhite 0%, $themeLightBlue 0%);
+    transition: all .3s ease-in;
+  }
+
+  &__indicator {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: 'Futura LT Light', Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6.4rem;
+    color: $themeWhite;
+    letter-spacing: 1rem;
+    user-select: none;
+  }
+
+  &__digits-box {
+    position: absolute;
+    top: 40%;
+  }
+
+  &__digits-box:first-child {
+    left: 15%;
+  }
+
+  &__digits-box:last-child {
+    left: 57.5%;
+  }
+
+  &__dots {
+    height: 7rem;
+    width: 3rem;
+    position: relative;
+  }
+
+  &__dots::before,
+  &__dots::after {
+    position: absolute;
+    content: '';
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: $themeWhite;
+    left: 1.2rem;
+    border-radius: 50%;
+  }
+
+  &__dots::before {
+    top: 1.5rem;
+  }
+
+  &__dots::after {
+    top: calc(100% - 1.9rem);
+  }
+
+  &__spinning-ball {
+    width: calc(100% - 1.2rem);
+    height: calc(100% - 1.2rem);
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 2;
+    /* transition: all .2s ease-in; */
+  }
+
+  &__spinning-ball::before {
+    position: absolute;
+    content: '';
+    background-color: $themeWhite;
+    width: 2rem;
+    height: 2rem;
+    left: calc(50% - 1rem);
+    top: -1.4rem;
+    border-radius: 50%;
+  }
+
+  &__end-button,
+  &__pauseresume-button {
+    position: absolute;
+    left: calc(50% - 2.75rem);
+    background-color: $themeLightBlue;
+    border: none;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    color: $darkBlueGrey;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0 0 0.8rem $themeBlack;
+    user-select: none;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+  }
+
+  &__end-button {
+    bottom: -2.75rem;
+    transform: translateY(5rem);
+
+    &--visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__pauseresume-button {
+    top: -2.75rem;
+    transform: translateY(-5rem);
+    transition-delay: .2s;
+
+    &--visible {
+      visibility: visible;
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+
+.timer__task {
+  display: none;
+  position: fixed;
+  font-family: 'Futura LT Light', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  top: 2.5rem;
+  left: 1.2rem;
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  min-width: 20rem;
+  max-width: 40rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0.2rem solid $themeLightBlue;
+  box-shadow: 0 0 0.8rem $themeBlack;
+  color: $themeWhite;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+
+
+  &::before {
+    position: absolute;
+    content: 'Current Timer';
+    line-height: 1.15;
+    font-family: 'Futura LT Regular', Arial, Helvetica, sans-serif;
+    top: -1.2rem;
+    left: 1.2rem;
+    background-color: $themeLightBlue;
+    color: $darkBlueGrey;
+    box-shadow: 0 0 0.4rem $themeBlack;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.4rem;
+  }
+
+  span {
+    display: -webkit-box;
+    letter-spacing: 0.025rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}

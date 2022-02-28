@@ -1,0 +1,77 @@
+.durationContainer {
+  display: none;
+  border-radius: 0.6rem;
+  padding: 3rem 3rem 2rem;
+  margin: 1.2rem;
+  font-size: 2.5rem;
+  width: 40rem;
+  background-color: #261d45;
+  color: #fff;
+  box-shadow: 0 0.3rem 0.1rem -0.2rem rgb(0 0 0 / 0.2), 0 0.2rem 0.2rem 0 rgb(0 0 0 / 0.14), 0 0.1rem 0.5rem 0 rgb(0 0 0 / 0.12);
+  font-family: "Futura LT Light", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.05rem;
+
+
+  &__title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.625rem;
+    letter-spacing: 0.125rem;
+  }
+
+  &__inputs {
+    display: flex;
+    padding: 1rem 0.5rem;
+    background-color: rgb(255, 255, 255, 0.25);
+    flex-direction: row;
+    justify-content: space-between;
+    /* border-radius: 0.6rem; */
+    margin: 0 -3rem;
+  }
+
+  &__input-box,
+  &__input-box--text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__input-box {
+    margin: 0.8rem;
+  }
+
+  &__input-box--text {
+    margin: 0 -2rem 1rem -2rem;
+    padding: 0 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.1rem solid #fff;
+    padding-bottom: 1.5rem;
+
+    input {
+      padding: 0.25rem 2rem;
+    }
+  }
+
+  &__input-label {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.625rem;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__input {
+    border-radius: 0.6rem;
+    border: 0.3rem solid transparent;
+    font-size: 85%;
+    text-align: center;
+    -webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+  }
+
+  &__input:focus {
+    outline: none;
+    border-color: #00aced;
+  }
+}

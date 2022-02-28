@@ -1,0 +1,129 @@
+.actionsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  border-top: 0.1rem solid $themeWhite;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 65%;
+
+
+  &__settings-toggle {
+    display: flex;
+    align-items: center;
+    line-height: 2.275rem;
+    text-transform: uppercase;
+    color: $themeWhite;
+    background-color: rgba(92, 86, 116, 0.5);
+    border: 0.1rem solid rgba(92, 86, 116, 0.5);
+    padding: 0.5rem 0.3rem 0.5rem 0.7rem;
+    border-radius: 0.4rem;
+    letter-spacing: 0.1rem;
+    user-select: none;
+    outline: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+
+  &__settings-toggle:focus {
+    border-color: currentColor;
+  }
+
+  &__settings-toggle:hover {
+    border-color: $themeLightGray;
+  }
+
+  &__settings-text {
+    height: 2rem;
+  }
+
+  &__settings-icon {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    margin-left: 0.5rem;
+    transition: all 350ms cubic-bezier(.4, 0, .2, 1);
+  }
+
+  &__settings-toggle.active &__settings-icon {
+    transform: rotate(-180deg);
+  }
+
+  &__start-button {
+    border: none;
+    background-color: #00aced;
+    color: $themeBlack;
+    border-radius: 4rem;
+    padding: 1.6rem 2.4rem;
+    letter-spacing: 0.2rem;
+    user-select: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+
+  &__start-button:disabled {
+    background-color: #777;
+    opacity: .7;
+    cursor: not-allowed;
+  }
+}
+
+
+.settings {
+  display: none;
+  margin-top: 1.5rem;
+  background-color: $themeLightGray;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.6rem;
+  font-family: "Futura LT Light", Arial, Helvetica, sans-serif;
+  /* margin: 1.5rem -2rem 0; */
+
+
+  &__setting-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0.6rem;
+    font-size: 1.875rem;
+    cursor: pointer;
+  }
+
+  &__setting-checkbox {
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 2rem;
+    border-width: 0.2rem;
+    background-color: $themePaleGray;
+    transition: all 200ms cubic-bezier(.4, 0, .2, 1);
+  }
+
+  &__setting-checkbox::after {
+    position: absolute;
+    content: '';
+    height: 1.36rem;
+    width: 1.36rem;
+    top: 0.32rem;
+    left: 0.4rem;
+    border-radius: 50%;
+    background-color: $themeWhite;
+    transition: all 200ms cubic-bezier(.4, 0, .2, 1);
+  }
+
+  &__setting-checkbox:focus {
+    outline: none;
+    box-shadow: $themeLightGray 0px 0px 0px 2px, $themeMediumBlue 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  }
+
+  &__setting-checkbox:checked {
+    background-color: $themeMediumBlue;
+  }
+
+  &__setting-checkbox:checked::after {
+    transform: translateX(1.84rem);
+  }
+}

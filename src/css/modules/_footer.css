@@ -1,0 +1,79 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 500ms cubic-bezier(.4, 0, .2, 1);
+
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+/* Footer */
+.footer {
+  color: $themeWhite;
+  display: none;
+  padding: 1.8rem;
+  text-align: center;
+  font-family: 'Futura LT Light', Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  position: fixed;
+  bottom: 1.6rem;
+  left: 1.2rem;
+  width: max-content;
+  width: 40rem;
+  letter-spacing: 0.05rem;
+  box-shadow: 0 0.3rem 0.1rem -0.2rem rgba(0, 0, 0, 0.2),
+  0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.14),
+  0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.12);
+  background-color: rgb(0, 0, 0, 0.35);
+  backdrop-filter: blur(2rem);
+
+
+  &__link {
+    color: $themeLightBlue;
+    text-decoration: none;
+    text-shadow: 0 0 $themeLightBlue;
+  }
+  
+  &__heart {
+    color: $themeLightBlue;
+  }
+
+  &__divider {
+    border: 0;
+    height: 0.1rem;
+    background-image: linear-gradient(to right, rgb(255, 255, 255, 25%), $themeWhite, rgb(255, 255, 255, 25%));
+    margin-bottom: 1.5rem;
+    width: 70%;
+  }
+
+  /** &__social {
+
+  } **/
+
+  &__social-svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  &__social--twitter {
+    color: $themeLightBlue;
+    border: 0.1rem solid $themeLightBlue;
+  }
+
+  &__social--github {
+    color: $themeWhite;
+    border: 0.1rem solid $themeWhite;
+  }
+}

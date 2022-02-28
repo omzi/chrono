@@ -1,0 +1,75 @@
+{
+  "name": "chrono",
+  "version": "1.0.0",
+  "description": "A sweet countdown timer app built w/ HTML, CSS & JavaScript ⚡",
+  "main": "src/js/app.js",
+  "scripts": {
+    "build": "webpack",
+    "build:sw": "workbox generateSW workbox.config.js",
+    "dev": "webpack serve",
+    "prepare": "husky install",
+    "lint": "eslint -c .eslintrc.js --ext js src",
+    "lint:fix": "yarn lint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omzi/chrono.git"
+  },
+  "keywords": [
+    "countdown",
+    "timer",
+    "html",
+    "css",
+    "javascript",
+    "js",
+    "netlify",
+    "hackathon",
+    "webpack",
+    "postcss",
+    "eslint"
+  ],
+  "author": "Omezibe Obioha",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/omzi/chrono/issues"
+  },
+  "homepage": "https://github.com/omzi/chrono#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "autoprefixer": "^10.4.2",
+    "css-loader": "^6.6.0",
+    "eslint": "^7.32.0",
+    "eslint-config-eslint": "^7.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsdoc": "^22.2.0",
+    "eslint-plugin-json": "^3.1.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.1.2",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.2.1",
+    "postcss-nested": "^5.0.6",
+    "postcss-simple-vars": "^6.0.3",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "workbox-cli": "^6.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "git pull upstream dev",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/*.js": [
+      "eslint --fix",
+      "prettier --ignore-unknown --write"
+    ]
+  }
+}

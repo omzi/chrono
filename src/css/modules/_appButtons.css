@@ -1,0 +1,50 @@
+.info__button {
+  position: fixed;
+  top: 1.2rem;
+  padding: 0.8rem;
+  background-color: $darkBlueGrey;
+  color: $themeWhite;
+}
+
+.info__button {
+  right: 1.2rem;
+}
+
+.install__button {
+  display: flex;
+  position: fixed;
+  bottom: 1.24rem;
+  right: 1.24rem;
+  padding: 0.5rem 0.75rem;
+  background-color: rgb(255 255 255 / 50%);
+  border: 0.2rem solid $darkBlueGrey;
+  color: $darkBlueGrey;
+  text-shadow: 0 0 $darkBlueGrey;
+  border-radius: 0.25rem;
+  letter-spacing: 0.05rem;
+  user-select: none;
+  transition: all .3s ease;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-family: 'Fira Code', 'Jetbrains Mono', 'Courier New', Courier, monospace;
+  width: 16rem;
+  box-shadow: 0.4rem 0.4rem 0 $darkBlueGrey;
+  visibility: hidden;
+  transform: translateX(20rem);
+  opacity: 0;
+
+
+  &:focus,
+  &:hover {
+    box-shadow: 0px 0.2rem 0.4rem $darkBlueGrey;
+    transform: translate(0.2rem, 0.2rem);
+  }
+
+  &--visible {
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,4 @@
+.disabled {
+  user-select: none !important;
+  pointer-events: none !important;
+}
